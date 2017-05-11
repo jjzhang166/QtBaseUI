@@ -670,7 +670,7 @@ PushButton#btnClose{
     color:green;
     /*qproperty-text:"\e6e9";*/
     qproperty-fontIcon: "iconfont" 10px;
-    qproperty-fontIconColor: red;
+    qproperty-fontIconColor: green;
     qproperty-fontIconText: "\e6e9";
  
 }
