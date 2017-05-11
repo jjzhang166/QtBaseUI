@@ -11,6 +11,7 @@
 #include <QApplication>
 #include <QScopedPointer>
 
+UI_NAMESPACE_BEGIN
 //==================================================================================================
 struct QSettingGroup
 {
@@ -221,3 +222,6 @@ MainWindow * getMainWindow(QWidget * window)
 	widget->setWidget(window);
 	return widget;
 }
+
+//==================================================================================================
+UI_NAMESPACE_END

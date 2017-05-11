@@ -8,6 +8,8 @@
 #include "FrameHelper.h" 
 #include "FrameHelperPrivate.h"
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 FrameHelper::FrameHelper(QWidget *parent, QWidget * title) : QObject(parent)
 {
     d = new FrameHelperPrivate(parent, title);
@@ -77,3 +79,7 @@ void FrameHelper::convertMaxAndRestore()
 {
 	d->refreshMaximizedButton();
 }
+
+
+//==================================================================================================
+UI_NAMESPACE_END

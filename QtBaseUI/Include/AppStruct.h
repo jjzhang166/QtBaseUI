@@ -1,5 +1,8 @@
 #pragma once
+#include "AppGlobal.h"
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 enum MessageRet
 {
 	RET_YES = 1,
@@ -14,3 +17,6 @@ enum ButtonType {
 	BUTTON_SKIN,
 	BUTTON_MORE
 };
+
+//==================================================================================================
+UI_NAMESPACE_END

@@ -5,6 +5,9 @@
 #include "PushButton.h"
 #include "AppHelper.h"
 
+
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 TitleBar::TitleBar(QWidget *parent)
 : QWidget(parent), ui(new Ui::TitleBar)
 {
@@ -18,7 +21,7 @@ TitleBar::~TitleBar()
 	delete ui;
 }
 
-/***********************************************************************************************************************************/
+//==================================================================================================
 void TitleBar::setPixmap(const QPixmap & pximap)
 {
 	ui->labIcon->setPixmap(pximap);
@@ -50,3 +53,6 @@ void TitleBar::setBtnVisible(ButtonType type, bool visible)
 		break;
 	}
 }
+
+//==================================================================================================
+UI_NAMESPACE_END

@@ -1,5 +1,6 @@
 ﻿#ifndef LFFRAMEHELPERPRIVATE_H
 #define LFFRAMEHELPERPRIVATE_H
+#include "AppGlobal.h"
 
 #include <QObject>
 #include <QPoint>
@@ -13,6 +14,9 @@ class QTimer;
 class QWidget;
 class QMouseEvent;
 class QAbstractButton;
+
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 class FrameHelperPrivate : public QObject, QAbstractNativeEventFilter
 {
     Q_OBJECT
@@ -73,5 +77,8 @@ private:
 	MoveDirection direction;
 	MoveOperation operation;
 };
+
+//==================================================================================================
+UI_NAMESPACE_END
 
 #endif // FRAMELESSHELPERPRIVATE_H

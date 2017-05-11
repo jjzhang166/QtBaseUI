@@ -15,6 +15,8 @@
 #include <windows.h>
 #endif
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 FrameHelperPrivate::FrameHelperPrivate(QWidget *parent, QWidget * title)
     : QObject(parent)
 {
@@ -445,3 +447,6 @@ bool FrameHelperPrivate::nativeEventFilter(const QByteArray &eventType, void *me
 	return false;
 }
 
+
+//==================================================================================================
+UI_NAMESPACE_END

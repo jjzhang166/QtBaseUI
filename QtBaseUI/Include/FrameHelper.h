@@ -8,8 +8,11 @@
 
 class QWidget;
 class QAbstractButton;
-class FrameHelperPrivate;
 
+
+UI_NAMESPACE_BEGIN
+//==================================================================================================
+class FrameHelperPrivate;
 class QTBASEUI_EXPORT FrameHelper : public QObject
 {
     Q_OBJECT
@@ -34,5 +37,8 @@ public:
 private:
     FrameHelperPrivate *d;
 };
+
+//==================================================================================================
+UI_NAMESPACE_END
 
 #endif // FRAMELESSHELPER_H

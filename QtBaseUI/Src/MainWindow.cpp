@@ -3,6 +3,8 @@
 
 #include "ui_MainWindow.h"
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 MainWindow::MainWindow(QWidget *parent)
 	: QWidget(parent),ui(new Ui::MainWindow)
 {
@@ -25,3 +27,6 @@ void MainWindow::setWindowTitle(const QString strTitle)
 {
 	ui->title->setTitleText(strTitle);
 }
+
+//==================================================================================================
+UI_NAMESPACE_END

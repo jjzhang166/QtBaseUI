@@ -1,11 +1,12 @@
 #pragma once
+#include "AppGlobal.h"
 
 #include <QWidget>
 
-#include "AppGlobal.h"
-
 namespace Ui { class MainWindow; };
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 class QTBASEUI_EXPORT MainWindow : public QWidget
 {
 	Q_OBJECT
@@ -21,3 +22,7 @@ public:
 private:
 	Ui::MainWindow * ui;
 };
+
+
+//==================================================================================================
+UI_NAMESPACE_END

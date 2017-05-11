@@ -1,16 +1,19 @@
 #pragma once
 
+#include <QString>
+#include <QStringList>
+
 #include "AppGlobal.h"
+#include "AppStruct.h"
 #include "MainWindow.h"
 #include "PushButton.h"
 #include "FrameHelper.h"
 
-#include <QString>
-#include <QStringList>
-
 class QWidget;
 class QAbstractButton;
 
+
+UI_NAMESPACE_BEGIN
 /************************************************************************/
 /*	应用程序初始化
 	程序默认的配置文件为app.ini
@@ -68,3 +71,4 @@ QTBASEUI_EXPORT MainWindow * getMainWindow(QWidget * window);
 
 
 //==================================================================================================
+UI_NAMESPACE_END

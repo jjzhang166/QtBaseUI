@@ -1,8 +1,14 @@
 ﻿#ifndef MESSAGEBOX_H
 #define MESSAGEBOX_H
 
+#include "AppGlobal.h"
 #include <QDialog>
 
+
+namespace Ui { class MessageBox; };
+
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 enum MessageType
 {
 	MT_INFO = 0,
@@ -14,7 +20,6 @@ enum MessageType
 };
 
 class FrameHelper;
-namespace Ui {class MessageBox;};
 class MessageBox : public QDialog
 {
 	Q_OBJECT
@@ -41,5 +46,9 @@ private:
 	Ui::MessageBox *ui;
 	FrameHelper * pFrameHelper;
 };
+
+
+//==================================================================================================
+UI_NAMESPACE_END
 
 #endif // MESSAGEBOX_H

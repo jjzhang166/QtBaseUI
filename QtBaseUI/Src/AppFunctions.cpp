@@ -7,6 +7,7 @@
 #include <QWidget>
 #include <QStyle>
 
+UI_NAMESPACE_BEGIN
 //==================================================================================================
 QWidget * MainFrame(QWidget * frame /*= NULL*/)
 {
@@ -162,3 +163,6 @@ QString getRGBColor(const QColor & color)
 	int red = color.red();
 	return QString("rgb(%1, %2, %3)").arg(red).arg(green).arg(blue);
 }
+
+//==================================================================================================
+UI_NAMESPACE_END

@@ -4,7 +4,10 @@
 
 #include <QFrame>
 #include <QLabel>
+
+UI_NAMESPACE_BEGIN
 //==================================================================================================
+
 QTBASEUI_EXPORT void qMsgBoxError(const QString & Text, QWidget * Parent = NULL);
 QTBASEUI_EXPORT void qMsgBoxAlert(const QString & Text, QWidget * Parent = NULL);
 QTBASEUI_EXPORT void qMsgBoxInfo(const QString & Text, QWidget * Parent = NULL);
@@ -39,3 +42,4 @@ QTBASEUI_EXPORT QString getRGBColor(const QColor & color);
 
 
 //==================================================================================================
+UI_NAMESPACE_END

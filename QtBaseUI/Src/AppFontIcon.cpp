@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QFontDatabase>
 
+
 //----------------------------------------------------------------------------------------------------------------------------
 struct stFontMsg
 {
@@ -48,3 +49,5 @@ QPixmap paintFontIcon(const QFont &font, const QString & text, const QColor &col
 	painter.end();
 	return pixmap;
 }
+
+//----------------------------------------------------------------------------------------------------------------------------

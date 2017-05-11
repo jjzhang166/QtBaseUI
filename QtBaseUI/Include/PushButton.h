@@ -4,6 +4,9 @@
 #include "AppGlobal.h"
 #include <QPushButton>
 
+
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 class QTBASEUI_EXPORT PushButton : public QPushButton
 {
 	Q_OBJECT
@@ -40,5 +43,10 @@ private:
 	QColor fontIconColor;
 	QString fontIconText;
 };
+
+
+//==================================================================================================
+UI_NAMESPACE_END
+USE_UI_NAMESPACE
 
 #endif // TOOLBUTTON_H

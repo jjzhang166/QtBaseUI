@@ -8,8 +8,11 @@
 #include "AppGlobal.h"
 #include "AppStruct.h"
 
+
 namespace Ui{ class TitleBar; }
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 class QTBASEUI_EXPORT TitleBar : public QWidget
 {
 	Q_OBJECT
@@ -26,5 +29,9 @@ public:
 private:
 	Ui::TitleBar * ui;
 };
+
+
+//==================================================================================================
+UI_NAMESPACE_END
 
 #endif // TITLEBAR_H

@@ -4,9 +4,11 @@
 
 #include "FrameHelper.h"
 #include "AppStruct.h"
+#include "AppHelper.h"
 #include "AppFontIcon.h"
 
-/***********************************************************************************************************************************/
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 MessageBox::MessageBox(QWidget *parent)
 	: QDialog(parent)
 {
@@ -24,7 +26,7 @@ MessageBox::~MessageBox()
 	delete ui;
 }
 
-/***********************************************************************************************************************************/
+//==================================================================================================
 void MessageBox::setContent(MessageType type, const QString & text)
 {
 	Type = type;
@@ -32,7 +34,7 @@ void MessageBox::setContent(MessageType type, const QString & text)
 	initIcon();
 }
 
-/***********************************************************************************************************************************/
+//==================================================================================================
 void MessageBox::initIcon()
 {
 	ui->btnNo->setVisible(false);
@@ -78,7 +80,6 @@ void MessageBox::initIcon()
 
 }
 
-#include "AppHelper.h"
 void MessageBox::initDialog()
 {
 	Type = MT_INFO;
@@ -91,7 +92,7 @@ void MessageBox::initDialog()
 	pFrameHelper->setCloseButton(ui->btnClose);
 }
 
-/***********************************************************************************************************************************/
+//==================================================================================================
 void MessageBox::on_btnYes_clicked()
 {
 	done(RET_YES);
@@ -106,3 +107,7 @@ void MessageBox::on_btnCancel_clicked()
 {
 	done(RET_CANCEL);
 }
+
+
+//==================================================================================================
+UI_NAMESPACE_END

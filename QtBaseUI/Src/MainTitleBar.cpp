@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "MainTitleBar.h"
 #include "ui_MainTitleBar.h"
-
 #include "AppHelper.h"
 
+
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 MainTitleBar::MainTitleBar(QWidget *parent)
 	: QWidget(parent)
 {
@@ -18,7 +20,7 @@ MainTitleBar::~MainTitleBar()
 	delete ui;
 }
 
-/***********************************************************************************************************************************/
+//==================================================================================================
 void MainTitleBar::setPixmap(const QPixmap & pximap)
 {
 	ui->labIcon->setPixmap(pximap);
@@ -53,3 +55,7 @@ void MainTitleBar::setBtnVisible(ButtonType type, bool visible)
 		break;
 	}
 }
+
+
+//==================================================================================================
+UI_NAMESPACE_END

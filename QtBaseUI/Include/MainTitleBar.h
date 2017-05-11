@@ -1,12 +1,13 @@
 #pragma once
+#include <QWidget>
 
 #include "AppGlobal.h"
 #include "AppStruct.h"
 
-#include <QWidget>
-
 namespace Ui { class MainTitleBar; };
 
+UI_NAMESPACE_BEGIN
+//==================================================================================================
 class QTBASEUI_EXPORT MainTitleBar : public QWidget
 {
 	Q_OBJECT
@@ -21,5 +22,10 @@ public:
 	void setBtnVisible(ButtonType Type, bool visible);
 
 private:
-	Ui::MainTitleBar *ui;
+	Ui::MainTitleBar * ui;
 };
+
+//==================================================================================================
+UI_NAMESPACE_END
+
+USE_UI_NAMESPACE
