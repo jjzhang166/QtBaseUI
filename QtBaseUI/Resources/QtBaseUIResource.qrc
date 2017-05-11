@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/fontawesome.ttf</file>
+        <file>images/system/messagebox/error.png</file>
+        <file>images/system/messagebox/info.png</file>
+        <file>images/system/messagebox/ok.png</file>
+        <file>images/system/messagebox/question.png</file>
+        <file>images/system/messagebox/warning.png</file>
+        <file>images/system/buttons/close.png</file>
+        <file>images/system/buttons/max.png</file>
+        <file>images/system/buttons/min.png</file>
+        <file>images/system/buttons/restore.png</file>
+        <file>qss/black.css</file>
+        <file>images/system/buttons/more.png</file>
+        <file>images/system/buttons/skin.png</file>
+        <file>fonts/iconfont.ttf</file>
+    </qresource>
+</RCC>
