@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "AppHelper.h"
+#include "AppFontIcon.h"
 
 #include <QDir>
 #include <QPointer>
@@ -182,7 +183,7 @@ static void initAppSettings(QSettings & settings)
 
 
 //==================================================================================================
-void initApplication()
+void initAppResource()
 {
 	QDir::setCurrent(dirExpand("$(AppDir)"));
 
@@ -194,6 +195,10 @@ void initApplication()
 	initAppSettings(config);
 }
 
+void initApplication()
+{
+	initIconFonts();
+}
 
 //==================================================================================================
 void regWindowTitle(QWidget * widget, QAbstractButton * btnClose, QAbstractButton * btnMin, QAbstractButton * btnMaxRestore, QWidget * title)

@@ -1,5 +1,7 @@
 ﻿#include "stdafx.h"
 #include "PushButton.h"
+#include "AppFontIcon.h"
+
 #include <QMenu>
 #include <QLabel>
 
@@ -28,22 +30,6 @@ QFont PushButton::iconFont()
 {
 	return fontIcon;
 }
-
-#include <QPainter>
-
-QPixmap paintIcon(const QFont &font, const QString & text, const QColor &color, const QSize &iconSize)
-{
-	QPixmap pixmap(iconSize);
-	pixmap.fill(Qt::transparent);
-	QPainter painter(&pixmap);
-
-	painter.setFont(font);
-	painter.setPen(QPen(color));
-	painter.drawText(0, 0, pixmap.width(), pixmap.height(), Qt::AlignCenter, text);
-	painter.end();
-	return pixmap;
-}
-
 
 void PushButton::setIconFont(const QFont & font)
 {
@@ -78,7 +64,7 @@ void PushButton::paintButtonIcon()
 	if (fontIconText.isEmpty())
 		return;
 
-	QPixmap img = paintIcon(fontIcon, fontIconText, fontIconColor, iconSize());
+	QPixmap img = paintFontIcon(fontIcon, fontIconText, fontIconColor, iconSize());
 	setIcon(img);
 }
 

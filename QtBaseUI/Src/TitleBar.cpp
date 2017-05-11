@@ -1,11 +1,9 @@
 #include "stdafx.h"
 #include "TitleBar.h"
-#include "PushButton.h"
 #include "ui_TitleBar.h"
 
+#include "PushButton.h"
 #include "AppHelper.h"
-
-#include <QMouseEvent>
 
 TitleBar::TitleBar(QWidget *parent)
 : QWidget(parent), ui(new Ui::TitleBar)
