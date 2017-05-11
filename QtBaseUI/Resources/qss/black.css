@@ -613,13 +613,13 @@ QFrame#content{
 
 QFrame#labIcon{
     font-family: "iconfont";
-    qproperty-text: "&#xe6e9;";
+    qproperty-text: "\e6e9";
     color:green;
 }
 
 /*标题栏按钮、颜色*/
 /*********************************************************************************************************************************************************************/
-ToolButton{
+PushButton{
       background: transparent;
       border-width: 0px;
       border-radius: 0px;
@@ -633,79 +633,81 @@ ToolButton{
       margin-right:0px;
 }
 
-ToolButton#btnMin{
+PushButton#btnMin{
 	border: 0px;
 	background: transparent;
     image: url(:/images/system/buttons/min.png);
 }
 
-ToolButton#btnMax{
+PushButton#btnMax{
 	border: 0px;
 	background: transparent;
     image: url(:/images/system/buttons/max.png);
 }
 
-ToolButton#btnRestore{
+PushButton#btnRestore{
 	border: 0px;
 	background: transparent;
     image: url(:/images/system/buttons/restore.png);
 }
 
-ToolButton#btnSkin{
+PushButton#btnSkin{
 	border: 0px;
 	background: transparent;
     image: url(:/images/system/buttons/skin.png);
 }
 
-ToolButton#btnMore{
+PushButton#btnMore{
 	border: 0px;
 	background: transparent;
     image: url(:/images/system/buttons/more.png);
 }
 
-ToolButton#btnClose{
+PushButton#btnClose{
 	border: 0px;
 	background: transparent;
-    font: 14px "iconfont";
+    font: "iconfont" 14px;
     color:green;
-    /*qproperty-text:"关闭";*/
-    qproperty-fontIconText: "";
-    /*image: url(:/images/system/buttons/close.png);*/
+    /*qproperty-text:"\e6e9";*/
+    qproperty-fontIcon: "iconfont" 10px;
+    qproperty-fontIconColor: red;
+    qproperty-fontIconText: "\e6e9";
+ 
 }
 
 
-ToolButton#btnMin:hover, ToolButton#btnMax:hover, ToolButton#btnClose:hover, ToolButton#btnRestore:hover{
+PushButton#btnMin:hover, PushButton#btnMax:hover, PushButton#btnClose:hover, PushButton#btnRestore:hover{
     background-color: rgb(63,63,63);
     color: red;
 	border: 0px;
 }
 
-ToolButton#btnClose:pressed, ToolButton#btnMin:pressed, ToolButton#btnMax:pressed, ToolButton#btnRestore:pressed{
+PushButton#btnClose:pressed, PushButton#btnMin:pressed, PushButton#btnMax:pressed, PushButton#btnRestore:pressed{
     background-color: rgb(0,112,204);
 	border: 0px;
 }
 
-ToolButton:disabled{
+PushButton:disabled{
     background-color: gray;
     border: 1px;
 }
 
-ToolButton[popupMode="1"] { 
+PushButton[popupMode="1"] { 
     padding-right: 0px; 
 }
 
-ToolButton::menu-button {
+PushButton::menu-button {
     border: none;
 }
 
-ToolButton::menu-arrow {
+PushButton::menu-arrow {
     image: none;
 }
 
-ToolButton::menu-indicator {
+PushButton::menu-indicator {
     image: none;
 }
 
-ToolButton:open { 
+PushButton:open { 
     background-color: rgb(63, 147, 168);
 }

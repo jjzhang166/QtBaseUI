@@ -2,7 +2,7 @@
 
 #include "AppGlobal.h"
 #include "MainWindow.h"
-#include "ToolButton.h"
+#include "PushButton.h"
 #include "FrameHelper.h"
 
 #include <QString>

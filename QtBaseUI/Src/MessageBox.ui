@@ -50,7 +50,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="ToolButton" name="btnClose">
+       <widget class="PushButton" name="btnClose">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -186,9 +186,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>ToolButton</class>
+   <class>PushButton</class>
    <extends>QPushButton</extends>
-   <header>ToolButton.h</header>
+   <header>PushButton.h</header>
   </customwidget>
  </customwidgets>
  <resources>

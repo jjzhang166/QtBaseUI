@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "TitleBar.h"
-#include "ToolButton.h"
+#include "PushButton.h"
 #include "ui_TitleBar.h"
 
 #include "AppHelper.h"

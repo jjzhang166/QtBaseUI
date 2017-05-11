@@ -84,7 +84,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="ToolButton" name="btnMin">
+       <widget class="PushButton" name="btnMin">
         <property name="toolTip">
          <string notr="true">最小化</string>
         </property>
@@ -94,7 +94,7 @@
        </widget>
       </item>
       <item>
-       <widget class="ToolButton" name="btnMax">
+       <widget class="PushButton" name="btnMax">
         <property name="toolTip">
          <string notr="true">最大化</string>
         </property>
@@ -104,7 +104,7 @@
        </widget>
       </item>
       <item>
-       <widget class="ToolButton" name="btnClose">
+       <widget class="PushButton" name="btnClose">
         <property name="toolTip">
          <string notr="true">关闭</string>
         </property>
@@ -121,9 +121,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>ToolButton</class>
+   <class>PushButton</class>
    <extends>QPushButton</extends>
-   <header>ToolButton.h</header>
+   <header>PushButton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
