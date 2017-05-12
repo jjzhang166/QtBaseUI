@@ -17,7 +17,7 @@ struct stFontMsg
 static const stFontMsg iconFontArray[] =
 {
 	{ "FontAwesome",		":/fonts/fontawesome.ttf"},
-	{ "iconfont",		":/fonts/iconfont.ttf"}
+	{ "iconfontsys",		":/fonts/iconfontsys.ttf"}
 };
 
 //----------------------------------------------------------------------------------------------------------------------------

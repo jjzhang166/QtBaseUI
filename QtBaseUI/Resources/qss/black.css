@@ -58,27 +58,6 @@ background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 
 image:None;
 }
 
-QToolButton#btnMenu,QPushButton#btnMenu_Min,QPushButton#btnMenu_Max,QPushButton#btnMenu_Close{
-border-radius:3px;
-color:#DCDCDC;
-padding:3px;
-margin:0px;
-background:none;
-border-style:none;
-}
-
-QToolButton#btnMenu:hover,QPushButton#btnMenu_Min:hover,QPushButton#btnMenu_Max:hover{
-color:#FFFFFF;
-margin:1px 1px 2px 1px;
-background-color:rgba(51,127,209,230);
-}
-
-QPushButton#btnMenu_Close:hover{
-color:#FFFFFF;
-margin:1px 1px 2px 1px;
-background-color:rgba(238,0,0,128);
-}
-
 QRadioButton::indicator{
 width:15px;
 height:15px;
@@ -613,13 +592,12 @@ QFrame#content{
 
 QFrame#labIcon{
     font-family: "iconfont";
-    qproperty-text: "\e6e9";
     color:green;
 }
 
 /*标题栏按钮、颜色*/
 /*********************************************************************************************************************************************************************/
-PushButton{
+BASEUI--PushButton{
       background: transparent;
       border-width: 0px;
       border-radius: 0px;
@@ -633,81 +611,94 @@ PushButton{
       margin-right:0px;
 }
 
-PushButton#btnMin{
+BASEUI--PushButton#btnMin{
 	border: 0px;
 	background: transparent;
-    image: url(:/images/system/buttons/min.png);
+    font: 14px "iconfontsys";
+    color:white;
+    qproperty-text:"\e608";
 }
 
-PushButton#btnMax{
+BASEUI--PushButton#btnMax{
 	border: 0px;
 	background: transparent;
-    image: url(:/images/system/buttons/max.png);
+    font: 14px "iconfontsys";
+    color:white;
+    qproperty-text:"\e605";
 }
 
-PushButton#btnRestore{
+BASEUI--PushButton#btnRestore{
 	border: 0px;
 	background: transparent;
-    image: url(:/images/system/buttons/restore.png);
+    font: 14px "iconfontsys";
+    color:white;
+    qproperty-text:"\e61a";
 }
 
-PushButton#btnSkin{
+BASEUI--PushButton#btnSkin{
 	border: 0px;
 	background: transparent;
-    image: url(:/images/system/buttons/skin.png);
+    font: 14px "iconfontsys";
+    color:rgb(210,210,210);
+    qproperty-text:"\e60c";
 }
 
-PushButton#btnMore{
+BASEUI--PushButton#btnMore{
 	border: 0px;
 	background: transparent;
-    image: url(:/images/system/buttons/more.png);
+    font: 14px "iconfontsys";
+    color:white;
+    qproperty-text:"\e790";
 }
 
-PushButton#btnClose{
+BASEUI--PushButton#btnClose{
 	border: 0px;
 	background: transparent;
-    font: "iconfont" 14px;
-    color:green;
-    /*qproperty-text:"\e6e9";*/
+    font: 14px "iconfontsys";
+    color:white;
+    qproperty-text:"\e600";
+    /*
+    设置button的icon
     qproperty-fontIcon: "iconfont" 10px;
     qproperty-fontIconColor: green;
     qproperty-fontIconText: "\e6e9";
- 
+    */
 }
 
 
-PushButton#btnMin:hover, PushButton#btnMax:hover, PushButton#btnClose:hover, PushButton#btnRestore:hover{
+BASEUI--PushButton#btnClose:hover,BASEUI--PushButton#btnMax:hover,BASEUI--PushButton#btnMin:hover,BASEUI--PushButton#btnRestore:hover,BASEUI--PushButton#btnSkin:hover,BASEUI--PushButton#btnMore:hover{
     background-color: rgb(63,63,63);
-    color: red;
+    color: goldenrod;
 	border: 0px;
 }
 
-PushButton#btnClose:pressed, PushButton#btnMin:pressed, PushButton#btnMax:pressed, PushButton#btnRestore:pressed{
+BASEUI--PushButton#btnClose:pressed,BASEUI--PushButton#btnMax:pressed,BASEUI--PushButton#btnMin:pressed,BASEUI--PushButton#btnRestore:pressed,BASEUI--PushButton#btnSkin:pressed,BASEUI--PushButton#btnMore:pressed{
+BASEUI--PushButton:pressed{
     background-color: rgb(0,112,204);
 	border: 0px;
 }
 
-PushButton:disabled{
+BASEUI--PushButton:disabled{
     background-color: gray;
     border: 1px;
 }
 
-PushButton[popupMode="1"] { 
+BASEUI--PushButton[popupMode="1"] { 
     padding-right: 0px; 
 }
 
-PushButton::menu-button {
+BASEUI--PushButton::menu-button {
     border: none;
 }
 
-PushButton::menu-arrow {
+BASEUI--PushButton::menu-arrow {
     image: none;
 }
 
-PushButton::menu-indicator {
+BASEUI--PushButton::menu-indicator {
     image: none;
 }
 
-PushButton:open { 
+BASEUI--PushButton:open { 
     background-color: rgb(63, 147, 168);
 }

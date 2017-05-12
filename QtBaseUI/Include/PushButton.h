@@ -47,6 +47,6 @@ private:
 
 //==================================================================================================
 UI_NAMESPACE_END
-USE_UI_NAMESPACE
 
+USE_UI_NAMESPACE
 #endif // TOOLBUTTON_H
