@@ -7,7 +7,6 @@
 #include "AppStruct.h"
 #include "MainWindow.h"
 #include "PushButton.h"
-#include "FrameHelper.h"
 
 class QWidget;
 class QAbstractButton;

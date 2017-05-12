@@ -1,19 +1,18 @@
 ﻿#ifndef LFFRAMEHELPER_H
 #define LFFRAMEHELPER_H
 
+#include "AppGlobal.h"
+
 #include <QObject>
 #include <QMargins>
-
-#include "AppGlobal.h"
 
 class QWidget;
 class QAbstractButton;
 
-
 UI_NAMESPACE_BEGIN
 //==================================================================================================
 class FrameHelperPrivate;
-class QTBASEUI_EXPORT FrameHelper : public QObject
+class FrameHelper : public QObject
 {
     Q_OBJECT
 public:

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "AppHelper.h"
+#include "FrameHelper.h"
 #include "AppFontIcon.h"
 
 #include <QDir>
