@@ -1,10 +1,13 @@
 #pragma once
-#include <QWidget>
 
 #include "AppGlobal.h"
 #include "AppStruct.h"
 
+#include <QWidget>
+
+class QMenu;
 namespace Ui { class MainTitleBar; };
+//==================================================================================================
 
 UI_NAMESPACE_BEGIN
 //==================================================================================================
@@ -17,9 +20,13 @@ public:
 	~MainTitleBar();
 
 public:
-	void setPixmap(const QPixmap & pximap);
+	void setTitleIcon(const QPixmap & pximap);
 	void setTitleText(const QString & title);
 	void setBtnVisible(ButtonType Type, bool visible);
+
+public:
+	void setBtnSkinMenu(QMenu * menu);
+	void setBtnMoreMenu(QMenu * menu);
 
 private:
 	Ui::MainTitleBar * ui;

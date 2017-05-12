@@ -71,17 +71,17 @@
       <item>
        <widget class="PushButton" name="btnMore">
         <property name="toolTip">
-         <string notr="true">最小化</string>
+         <string notr="true">more</string>
         </property>
         <property name="text">
-         <string/>
+         <string notr="true"/>
         </property>
        </widget>
       </item>
       <item>
        <widget class="PushButton" name="btnSkin">
         <property name="toolTip">
-         <string notr="true">最大化</string>
+         <string notr="true">skin</string>
         </property>
         <property name="text">
          <string/>
@@ -91,17 +91,17 @@
       <item>
        <widget class="PushButton" name="btnMin">
         <property name="toolTip">
-         <string notr="true">最小化</string>
+         <string>min</string>
         </property>
         <property name="text">
-         <string/>
+         <string notr="true"/>
         </property>
        </widget>
       </item>
       <item>
        <widget class="PushButton" name="btnMax">
         <property name="toolTip">
-         <string notr="true">最大化</string>
+         <string>max</string>
         </property>
         <property name="text">
          <string/>
@@ -111,7 +111,7 @@
       <item>
        <widget class="PushButton" name="btnClose">
         <property name="toolTip">
-         <string notr="true">关闭</string>
+         <string>close</string>
         </property>
         <property name="text">
          <string notr="true"/>

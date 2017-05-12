@@ -562,16 +562,9 @@ border-color:#484848;
 /*DarkColorEnd:#525252*/
 /*HighColor:#00BB9E*/
 
+
 /*标题栏背景、字体颜色*/
 /*********************************************************************************************************************************************************************/
-/*
-QWidget#title{
-    border: 1px solid rgba(45,45,48);
-    border-bottom: 0px;
-    background-color: rgba(45,45,48);
-}
-*/
-
 QFrame#title{
     border: 1px solid rgba(45,45,48);
     border-bottom: 0px;
@@ -638,17 +631,17 @@ BASEUI--PushButton#btnRestore{
 BASEUI--PushButton#btnSkin{
 	border: 0px;
 	background: transparent;
-    font: 14px "iconfontsys";
-    color:rgb(210,210,210);
-    qproperty-text:"\e60c";
+    qproperty-fontIcon: "iconfontsys" 14px;
+    qproperty-fontIconColor: rgb(210,210,210);
+    qproperty-fontIconText: "\e60c";
 }
 
 BASEUI--PushButton#btnMore{
 	border: 0px;
 	background: transparent;
-    font: 14px "iconfontsys";
-    color:white;
-    qproperty-text:"\e790";
+    qproperty-fontIcon: "iconfontsys" 14px;
+    qproperty-fontIconColor: rgb(210,210,210);
+    qproperty-fontIconText: "\e790";
 }
 
 BASEUI--PushButton#btnClose{
@@ -657,23 +650,16 @@ BASEUI--PushButton#btnClose{
     font: 14px "iconfontsys";
     color:white;
     qproperty-text:"\e600";
-    /*
-    设置button的icon
-    qproperty-fontIcon: "iconfont" 10px;
-    qproperty-fontIconColor: green;
-    qproperty-fontIconText: "\e6e9";
-    */
 }
 
 
 BASEUI--PushButton#btnClose:hover,BASEUI--PushButton#btnMax:hover,BASEUI--PushButton#btnMin:hover,BASEUI--PushButton#btnRestore:hover,BASEUI--PushButton#btnSkin:hover,BASEUI--PushButton#btnMore:hover{
     background-color: rgb(63,63,63);
     color: goldenrod;
-	border: 0px;
+	border: -5px;
 }
 
 BASEUI--PushButton#btnClose:pressed,BASEUI--PushButton#btnMax:pressed,BASEUI--PushButton#btnMin:pressed,BASEUI--PushButton#btnRestore:pressed,BASEUI--PushButton#btnSkin:pressed,BASEUI--PushButton#btnMore:pressed{
-BASEUI--PushButton:pressed{
     background-color: rgb(0,112,204);
 	border: 0px;
 }
@@ -684,7 +670,7 @@ BASEUI--PushButton:disabled{
 }
 
 BASEUI--PushButton[popupMode="1"] { 
-    padding-right: 0px; 
+    padding-right: 0px;
 }
 
 BASEUI--PushButton::menu-button {
@@ -701,4 +687,46 @@ BASEUI--PushButton::menu-indicator {
 
 BASEUI--PushButton:open { 
     background-color: rgb(63, 147, 168);
+}
+
+/*消息提示框图标*/
+/*********************************************************************************************************************************************************************/
+BASEUI--MessageBox QLabel#icon[msgtype="ok"]{
+    border: 0px;
+	background: transparent;
+    font: 35px "iconfontsys";
+    color:green;
+    qproperty-text:"\e6b1";
+}
+
+BASEUI--MessageBox QLabel#icon[msgtype="info"]{
+    border: 0px;
+	background: transparent;
+    font: 35px "iconfontsys";
+    color:green;
+    qproperty-text:"\e6a4";
+}
+
+BASEUI--MessageBox QLabel#icon[msgtype="warning"]{
+    border: 0px;
+	background: transparent;
+    font: 35px "iconfontsys";
+    color:orangered;
+    qproperty-text:"\e601";
+}
+
+BASEUI--MessageBox QLabel#icon[msgtype="error"]{
+    border: 0px;
+	background: transparent;
+    font: 35px "iconfontsys";
+    color:red;
+    qproperty-text:"\e602";
+}
+
+BASEUI--MessageBox QLabel#icon[msgtype="question"]{
+    border: 0px;
+	background: transparent;
+    font: 35px "iconfontsys";
+    color:olivedrab;
+    qproperty-text:"\e6a3";
 }

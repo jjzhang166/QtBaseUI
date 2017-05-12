@@ -43,17 +43,17 @@ void MessageBox::initIcon()
 	{
 	case MT_OK:
 		ui->labTitle->setText(tr("Info Message"));
-		ui->icon->setPixmap(QPixmap(":/images/system/messagebox/ok.png"));
+		ui->icon->setProperty("msgtype", "ok");
 		break;
 
 	case MT_ERROR:
 		ui->labTitle->setText(tr("Error Message"));
-		ui->icon->setPixmap(QPixmap(":/images/system/messagebox/error.png"));
+		ui->icon->setProperty("msgtype", "error");
 		break;
 
 	case MT_WARNING:
 		ui->labTitle->setText(tr("Warn Message"));
-		ui->icon->setPixmap(QPixmap(":/images/system/messagebox/warning.png"));
+		ui->icon->setProperty("msgtype", "warning");
 		break;
 
 	case MT_QUESTION:
@@ -61,20 +61,20 @@ void MessageBox::initIcon()
 		ui->btnNo->setVisible(true);
 		ui->btnCancel->setVisible(true);
 		ui->labTitle->setText(tr("Question Message"));
-		ui->icon->setPixmap(QPixmap(":/images/system/messagebox/question.png"));
+		ui->icon->setProperty("msgtype", "question");
 		break;
 
 	case MT_QUESTION2:
 		ui->btnYes->setText(tr("Yes"));
 		ui->btnNo->setVisible(true);
 		ui->labTitle->setText(tr("Question Message"));
-		ui->icon->setPixmap(QPixmap(":/images/system/messagebox/question.png"));
+		ui->icon->setProperty("msgtype", "question");
 		break;
 
 	case MT_INFO:
 	default:
 		ui->labTitle->setText(tr("Kindly Reminder"));
-		ui->icon->setPixmap(QPixmap(":/Images/messagebox/info"));
+		ui->icon->setProperty("msgtype","info");
 		break;
 	}
 

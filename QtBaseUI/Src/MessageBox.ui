@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>MessageBox</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -21,7 +21,13 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QWidget" name="title" native="true">
+    <widget class="QFrame" name="title">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>25</height>
+      </size>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
        <number>0</number>
@@ -73,7 +79,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="content" native="true">
+    <widget class="QFrame" name="content">
      <layout class="QGridLayout" name="gridLayout">
       <property name="leftMargin">
        <number>6</number>
@@ -97,8 +103,17 @@
         </property>
         <item>
          <widget class="QLabel" name="icon">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>

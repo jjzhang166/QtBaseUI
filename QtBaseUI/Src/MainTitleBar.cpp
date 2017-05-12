@@ -3,7 +3,6 @@
 #include "ui_MainTitleBar.h"
 #include "AppHelper.h"
 
-
 UI_NAMESPACE_BEGIN
 //==================================================================================================
 MainTitleBar::MainTitleBar(QWidget *parent)
@@ -21,11 +20,10 @@ MainTitleBar::~MainTitleBar()
 }
 
 //==================================================================================================
-void MainTitleBar::setPixmap(const QPixmap & pximap)
+void MainTitleBar::setTitleIcon(const QPixmap & pximap)
 {
 	ui->labIcon->setPixmap(pximap);
 }
-
 
 void MainTitleBar::setTitleText(const QString & title)
 {
@@ -54,6 +52,17 @@ void MainTitleBar::setBtnVisible(ButtonType type, bool visible)
 	default:
 		break;
 	}
+}
+
+//==================================================================================================
+void MainTitleBar::setBtnSkinMenu(QMenu * menu)
+{
+	ui->btnSkin->setMenu(menu);
+}
+
+void MainTitleBar::setBtnMoreMenu(QMenu * menu)
+{
+	ui->btnMore->setMenu(menu);
 }
 
 

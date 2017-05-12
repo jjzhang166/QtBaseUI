@@ -18,5 +18,10 @@ enum ButtonType {
 	BUTTON_MORE
 };
 
+enum SkinStyle {
+	Skin_Black,
+	Skin_
+};
+
 //==================================================================================================
 UI_NAMESPACE_END

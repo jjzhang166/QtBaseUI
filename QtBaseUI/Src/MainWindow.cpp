@@ -23,10 +23,33 @@ void MainWindow::setWidget(QWidget * pWdiget)
 	connect(pWdiget, SIGNAL(closeWidget()), this, SLOT(close()));
 }
 
-void MainWindow::setWindowTitle(const QString strTitle)
+void MainWindow::setTitleIcon(const QPixmap & pximap)
 {
-	ui->title->setTitleText(strTitle);
+	ui->title->setTitleIcon(pximap);
 }
+
+void MainWindow::setTitleText(const QString & title)
+{
+	ui->title->setTitleText(title);
+}
+
+void MainWindow::setBtnVisible(ButtonType Type, bool visible)
+{
+	ui->title->setBtnVisible(Type, visible);
+}
+
+//==================================================================================================
+void MainWindow::setBtnSkinMenu(QMenu * menu)
+{
+	ui->title->setBtnSkinMenu(menu);
+}
+
+void MainWindow::setBtnMoreMenu(QMenu * menu)
+{
+	ui->title->setBtnMoreMenu(menu);
+}
+
+
 
 //==================================================================================================
 UI_NAMESPACE_END
