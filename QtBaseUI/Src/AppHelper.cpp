@@ -225,4 +225,14 @@ MainWindow * getMainWindow(QWidget * window)
 }
 
 //==================================================================================================
+void regButtonIcon(QAbstractButton * button, QWidget * parent)
+{
+	QPointer<ButtonFontIcon> fontBtn = new ButtonFontIcon(button, parent);
+}
+
+
+//==================================================================================================
+
+
+//==================================================================================================
 UI_NAMESPACE_END

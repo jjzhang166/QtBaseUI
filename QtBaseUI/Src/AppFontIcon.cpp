@@ -6,6 +6,7 @@
 #include <QFontDatabase>
 
 
+UI_NAMESPACE_BEGIN
 //----------------------------------------------------------------------------------------------------------------------------
 struct stFontMsg
 {
@@ -51,3 +52,80 @@ QPixmap paintFontIcon(const QFont &font, const QString & text, const QColor &col
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
+ButtonFontIcon::ButtonFontIcon(QAbstractButton * btnbutton, QWidget * parent):QWidget(parent)
+{
+	btnIconFont = btnbutton;
+
+	if (btnIconFont)
+	{
+		this->setObjectName(btnIconFont->objectName());
+	}
+
+	fontIconSize.setWidth(16);
+	fontIconSize.setHeight(16);
+	
+}
+
+ButtonFontIcon::~ButtonFontIcon()
+{
+
+}
+
+QFont ButtonFontIcon::iconFont()
+{
+	return fontIcon;
+}
+
+void ButtonFontIcon::setIconFont(const QFont & font)
+{
+	fontIcon = font;
+	paintButtonIcon();
+}
+
+QSize ButtonFontIcon::iconSize()
+{
+	return fontIconSize;
+}
+
+void ButtonFontIcon::setIconSize(const QSize & size)
+{
+	fontIconSize = size;
+	paintButtonIcon();
+}
+
+QString ButtonFontIcon::iconFontText()
+{
+	return fontIconText;
+}
+
+void ButtonFontIcon::setIconFontText(const QString & text)
+{
+	fontIconText = text;
+	paintButtonIcon();
+}
+
+QColor ButtonFontIcon::iconFontColor()
+{
+	return fontIconColor;
+}
+
+void ButtonFontIcon::setIconFontColor(const QColor & color)
+{
+	fontIconColor = color;
+	paintButtonIcon();
+}
+
+void ButtonFontIcon::paintButtonIcon()
+{
+	if (fontIconText.isEmpty() || !btnIconFont || fontIconSize.isEmpty())
+		return;
+	QSize ic = btnIconFont->iconSize();
+	QPixmap img = paintFontIcon(fontIcon, fontIconText, fontIconColor, fontIconSize);
+	btnIconFont->setIcon(img);
+
+	deleteLater();
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+UI_NAMESPACE_END
+
