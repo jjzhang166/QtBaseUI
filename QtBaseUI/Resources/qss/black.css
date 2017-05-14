@@ -134,38 +134,18 @@ QTimeEdit::down-button:pressed,QDateEdit::down-button:pressed,QDateTimeEdit::dow
 bottom:-2px;
 }
 
-QComboBox::down-arrow,QDateEdit[calendarPopup="true"]::down-arrow,QTimeEdit[calendarPopup="true"]::down-arrow,QDateTimeEdit[calendarPopup="true"]::down-arrow{
-image:url(:/qss/psblack/add_bottom.png);
-width:10px;
-height:10px;
-right:2px;
-}
-
-QComboBox::drop-down,QDateEdit::drop-down,QTimeEdit::drop-down,QDateTimeEdit::drop-down{
-subcontrol-origin:padding;
-subcontrol-position:top right;
-width:15px;
-border-left-width:0px;
-border-left-style:solid;
-border-top-right-radius:3px;
-border-bottom-right-radius:3px;
-border-left-color:#242424;
-}
-
-QComboBox::drop-down:on{
-top:1px;
-}
 
 QMenuBar::item{
-color:#DCDCDC;
-background-color:rgba(45,45,48);
-border:1px solid #646464;
-border-left: none;
-border-right: none;
-margin:0px;
-padding:3px 10px;
+	color:#DCDCDC;
+	background-color:rgba(45,45,48);
+	border:1px solid #646464;
+	border-left: none;
+	border-right: none;
+	margin:0px;
+	padding:3px 10px;
 }
 
+/*********************************************************************************************************************************************************************/
 QMenu,QMenuBar,QMenu:disabled,QMenuBar:disabled{
 color:#DCDCDC;
 background-color:rgba(45,45,48);
@@ -265,55 +245,6 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
 
 QScrollArea{
 border:0px;
-}
-
-QTreeView,QListView,QTableView,QTabWidget::pane{
-border:1px solid #242424;
-selection-background-color:#646464;
-selection-color:#DCDCDC;
-alternate-background-color:#525252;
-gridline-color:#242424;
-}
-
-QTreeView::branch:closed:has-children{
-margin:4px;
-border-image:url(:/qss/psblack/branch_open.png);
-}
-
-QTreeView::branch:open:has-children{
-margin:4px;
-border-image:url(:/qss/psblack/branch_close.png);
-}
-
-QTreeView,QListView,QTableView,QSplitter::handle,QTreeView::branch{
-background:#444444;
-}
-
-QTableView::item:selected,QListView::item:selected,QTreeView::item:selected{
-color:#DCDCDC;
-background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
-}
-
-QTableView::item:hover,QListView::item:hover,QTreeView::item:hover{
-color:#DCDCDC;
-background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #646464,stop:1 #525252);
-}
-
-QTableView::item,QListView::item,QTreeView::item{
-padding:1px;
-margin:0px;
-}
-
-QHeaderView::section,QTableCornerButton:section{
-padding:3px;
-margin:0px;
-color:#DCDCDC;
-border:1px solid #242424;
-border-left-width:0px;
-border-right-width:1px;
-border-top-width:0px;
-border-bottom-width:1px;
-background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #646464,stop:1 #525252);
 }
 
 QTabBar::tab{
@@ -450,11 +381,6 @@ border-width:1px 1px 0px 1px;
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
 }
 
-QComboBox QAbstractItemView::item{
-min-height:20px;
-min-width:10px;
-}
-
 QTableView[model="true"]::item{
 padding:0px;
 margin:0px;
@@ -479,18 +405,128 @@ background:#444444;
 border-color:#484848;
 }
 
-/*TextColor:#DCDCDC*/
-/*PanelColor:#444444*/
-/*BorderColor:#242424*/
-/*NormalColorStart:#484848*/
-/*NormalColorEnd:#383838*/
-/*DarkColorStart:#646464*/
-/*DarkColorEnd:#525252*/
-/*HighColor:#00BB9E*/
+/*ComboBox风格*/
+/*********************************************************************************************************************************************************************/
+QComboBox::down-arrow,QDateEdit[calendarPopup="true"]::down-arrow,QTimeEdit[calendarPopup="true"]::down-arrow,QDateTimeEdit[calendarPopup="true"]::down-arrow{
+	image:url(:/qss/psblack/add_bottom.png);
+	width:10px;
+	height:10px;
+	right:2px;
+}
 
+QComboBox::drop-down,QDateEdit::drop-down,QTimeEdit::drop-down,QDateTimeEdit::drop-down{
+	subcontrol-origin:padding;
+	subcontrol-position:top right;
+	width:15px;
+	border-left-width:0px;
+	border-left-style:solid;
+	border-top-right-radius:3px;
+	border-bottom-right-radius:3px;
+	border-left-color:#242424;
+}
 
-/*****************************************************************************************************/
+QComboBox::drop-down:on{
+	top:1px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/images/button/down_light.png);
+}
+
+QComboBox::down-arrow:hover {
+	image: url(:/images/button/down_blue.png);
+}
+
+QComboBox QAbstractItemView::item{
+	min-height:20px;
+	min-width:10px;
+}
+
+/****树和表格样式设置****/
+/*********************************************************************************************************************************************************************/
+
+QTreeView,QListView,QTableView,QTabWidget::pane{
+	border:1px solid #242424;
+	selection-background-color:#646464;
+	selection-color:#DCDCDC;
+	alternate-background-color:#525252;
+	gridline-color:#242424;
+}
+
+QTreeView::branch:has-children:closed{
+	margin:4px;
+	border-image:url(:/images/tree/closed_light.png);
+}
+
+QTreeView::branch:has-children:closed:hover{
+	margin:4px;
+	border-image:url(:/images/tree/closed_blue.png);
+}
+
+QTreeView::branch:has-children:open{
+	margin:4px;
+	border-image:url(:/images/tree/open_light.png);
+}
+
+QTreeView::branch:has-children:open:hover{
+	margin:4px;
+	border-image:url(:/images/tree/open_blue.png);
+}
+
+QTreeView::branch{
+    background: transparent;
+}
+
+QTreeView,QListView,QTableView,QSplitter::handle{
+	background:#444444;
+}
+
+QTableView::item,QListView::item,QTreeView::item{
+	padding:1px;
+	margin:0px;
+    background: transparent;
+}
+
+QTableView::item:selected,QListView::item:selected,QTreeView::item:selected{
+	color:#DCDCDC;
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
+}
+
+QTableView::item:hover,QListView::item:hover,QTreeView::item:hover{
+	color:#DCDCDC;
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #646464,stop:1 #525252);
+}
+
+/**选中整行---树前面部分**/
+/*还存在部分问题*/
+/*
+QTreeView{
+    show-decoration-selected: 1;
+}
+
+QTreeView::item:selected, QTreeView::branch:selected {
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
+}
+
+QTreeView::item:hover, QTreeView::branch:hover {
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #646464,stop:1 #525252);
+}
+*/
+
+QHeaderView::section,QTableCornerButton:section{
+	padding:3px;
+	margin:0px;
+	color:#DCDCDC;
+	border:1px solid #242424;
+	border-left-width:0px;
+	border-right-width:1px;
+	border-top-width:0px;
+	border-bottom-width:1px;
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #646464,stop:1 #525252);
+}
+
 /****设置垂直滚动条基本样式****/
+/*********************************************************************************************************************************************************************/
 QScrollBar:vertical {
     border: none;
     width: 10px;

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>296</width>
+    <width>319</width>
     <height>141</height>
    </rect>
   </property>
@@ -65,6 +65,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string notr="true">close</string>
         </property>
         <property name="text">
          <string notr="true"/>
@@ -125,7 +128,7 @@
           <item>
            <widget class="QLabel" name="text">
             <property name="text">
-             <string/>
+             <string notr="true"/>
             </property>
             <property name="textFormat">
              <enum>Qt::RichText</enum>
@@ -156,21 +159,21 @@
             <item>
              <widget class="QPushButton" name="btnYes">
               <property name="text">
-               <string notr="true">确定</string>
+               <string notr="true">Yes</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="btnNo">
               <property name="text">
-               <string notr="true">否</string>
+               <string>No</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="btnCancel">
               <property name="text">
-               <string notr="true">取消</string>
+               <string>Cancel</string>
               </property>
              </widget>
             </item>
