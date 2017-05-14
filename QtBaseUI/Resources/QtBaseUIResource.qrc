@@ -3,5 +3,22 @@
         <file>qss/black.css</file>
         <file>fonts/fontawesome.ttf</file>
         <file>fonts/iconfontsys.ttf</file>
+        <file>images/scroll/up_light.png</file>
+        <file>images/scroll/up_blue.png</file>
+        <file>images/scroll/left_blue.png</file>
+        <file>images/scroll/left_light.png</file>
+        <file>images/scroll/right_blue.png</file>
+        <file>images/scroll/right_light.png</file>
+        <file>images/scroll/down_blue.png</file>
+        <file>images/scroll/down_light.png</file>
+        <file>images/button/down_blue.png</file>
+        <file>images/button/down_dark.png</file>
+        <file>images/button/down_light.png</file>
+        <file>images/tree/closed_blue.png</file>
+        <file>images/tree/closed_dark.png</file>
+        <file>images/tree/closed_light.png</file>
+        <file>images/tree/open_blue.png</file>
+        <file>images/tree/open_dark.png</file>
+        <file>images/tree/open_light.png</file>
     </qresource>
 </RCC>
