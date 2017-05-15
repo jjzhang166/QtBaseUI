@@ -7,7 +7,8 @@
 
 namespace Ui { class MessageBox; };
 
-UI_NAMESPACE_BEGIN
+//UI_NAMESPACE_BEGIN
+namespace BASEUI {
 //==================================================================================================
 enum MessageType
 {
@@ -49,6 +50,7 @@ private:
 
 
 //==================================================================================================
-UI_NAMESPACE_END
+};
+//UI_NAMESPACE_END
 
 #endif // MESSAGEBOX_H

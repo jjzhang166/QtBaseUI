@@ -40,22 +40,28 @@ QTBASEUI_EXPORT void initAppResource();
 QTBASEUI_EXPORT void initApplication();
 
 //==================================================================================================
-//程序目录读取	
+//程序目录读取[通过外部加载资源]	
 QTBASEUI_EXPORT QString dirExpand(const char * path);
 QTBASEUI_EXPORT QString dirExpand(const QString & path);
 QTBASEUI_EXPORT QStringList dirExpand(const QStringList & pathList);
 
 
 //==================================================================================================
-//加载资源
+//加载资源[通过外部加载资源]
 QTBASEUI_EXPORT void regResource(const QString & Path, const QString & Root);
 
 
 //==================================================================================================
-//加载翻译、设置皮肤
+//加载翻译、设置皮肤[通过外部加载资源]
 QTBASEUI_EXPORT void addTranslator(const QString & Name);
 QTBASEUI_EXPORT void setSkinStyles(const QString & Name);
 QTBASEUI_EXPORT void setStyleSheet(const QString & Path, bool Append = false);
+
+//本库中翻译文件的切换
+QTBASEUI_EXPORT void setTranslator(Language Type);
+
+//通过路径加载或改变翻译文件， Add代表增加或删除
+QTBASEUI_EXPORT void changeTranslator(const QString & Path, bool Add);
 
 
 

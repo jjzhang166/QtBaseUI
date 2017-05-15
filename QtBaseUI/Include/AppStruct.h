@@ -19,8 +19,14 @@ enum ButtonType {
 };
 
 enum SkinStyle {
-	Skin_Black,
-	Skin_
+	Skin_BLACK,
+	Skin_WHITE
+};
+
+enum Language
+{
+	LANG_EN,
+	LANG_CH
 };
 
 //==================================================================================================

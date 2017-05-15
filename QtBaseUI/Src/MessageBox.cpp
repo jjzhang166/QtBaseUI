@@ -7,107 +7,116 @@
 #include "AppHelper.h"
 #include "AppFontIcon.h"
 
-UI_NAMESPACE_BEGIN
-//==================================================================================================
-MessageBox::MessageBox(QWidget *parent)
-	: QDialog(parent)
-{
-	ui = new Ui::MessageBox();
-	ui->setupUi(this);
-	setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
-
-	initDialog();
-	initIcon();
-}
-
-MessageBox::~MessageBox()
-{
-	//CHK_POINT_DESTORY(pFrameHelper);
-	delete ui;
-}
-
-//==================================================================================================
-void MessageBox::setContent(MessageType type, const QString & text)
-{
-	Type = type;
-	ui->text->setText(text);
-	initIcon();
-}
-
-//==================================================================================================
-void MessageBox::initIcon()
-{
-	ui->btnNo->setVisible(false);
-	ui->btnCancel->setVisible(false);
-	switch (Type)
+//UI_NAMESPACE_BEGIN
+namespace BASEUI {
+	//==================================================================================================
+	MessageBox::MessageBox(QWidget *parent)
+		: QDialog(parent)
 	{
-	case MT_OK:
-		ui->labTitle->setText(tr("Info Message"));
-		ui->icon->setProperty("msgtype", "ok");
-		break;
+		ui = new Ui::MessageBox();
+		ui->setupUi(this);
+		setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
 
-	case MT_ERROR:
-		ui->labTitle->setText(tr("Error Message"));
-		ui->icon->setProperty("msgtype", "error");
-		break;
-
-	case MT_WARNING:
-		ui->labTitle->setText(tr("Warn Message"));
-		ui->icon->setProperty("msgtype", "warning");
-		break;
-
-	case MT_QUESTION:
-		ui->btnYes->setText(tr("Yes"));
-		ui->btnNo->setVisible(true);
-		ui->btnCancel->setVisible(true);
-		ui->labTitle->setText(tr("Question Message"));
-		ui->icon->setProperty("msgtype", "question");
-		break;
-
-	case MT_QUESTION2:
-		ui->btnYes->setText(tr("Yes"));
-		ui->btnNo->setVisible(true);
-		ui->labTitle->setText(tr("Question Message"));
-		ui->icon->setProperty("msgtype", "question");
-		break;
-
-	case MT_INFO:
-	default:
-		ui->labTitle->setText(tr("Kindly Reminder"));
-		ui->icon->setProperty("msgtype","info");
-		break;
+		initDialog();
+		initIcon();
 	}
 
-}
+	MessageBox::~MessageBox()
+	{
+		//CHK_POINT_DESTORY(pFrameHelper);
+		delete ui;
+	}
 
-void MessageBox::initDialog()
-{
-	Type = MT_INFO;
-	resize(QSize(200, 130));
-	ui->text->setWordWrap(true);
-	
-	pFrameHelper = new FrameHelper(this);
-	pFrameHelper->addEdgeWidget(this);
-	pFrameHelper->addDragWidget(this);
-	pFrameHelper->setCloseButton(ui->btnClose);
-}
+	//==================================================================================================
+	void MessageBox::setContent(MessageType type, const QString & text)
+	{
+		Type = type;
+		ui->text->setText(text);
+		initIcon();
+	}
 
-//==================================================================================================
-void MessageBox::on_btnYes_clicked()
-{
-	done(RET_YES);
-}
+	//==================================================================================================
+	void MessageBox::initIcon()
+	{
+		ui->btnNo->setVisible(false);
+		ui->btnCancel->setVisible(false);
+		switch (Type)
+		{
+		case MT_OK:
+			ui->btnYes->setText(tr("Ok"));
+			ui->labTitle->setText(tr("Info Message"));
+			ui->icon->setProperty("msgtype", "ok");
+			break;
 
-void MessageBox::on_btnNo_clicked()
-{
-	done(RET_NO);
-}
+		case MT_ERROR:
+			ui->btnYes->setText(tr("Ok"));
+			ui->labTitle->setText(tr("Error Message"));
+			ui->icon->setProperty("msgtype", "error");
+			break;
 
-void MessageBox::on_btnCancel_clicked()
-{
-	done(RET_CANCEL);
-}
+		case MT_WARNING:
+			ui->btnYes->setText(tr("Ok"));
+			ui->labTitle->setText(tr("Warn Message"));
+			ui->icon->setProperty("msgtype", "warning");
+			break;
+
+		case MT_QUESTION:
+			ui->btnYes->setText(tr("Yes"));
+			ui->btnYes->setVisible(true);
+			ui->btnNo->setVisible(true);
+			ui->btnCancel->setVisible(true);
+			ui->labTitle->setText(tr("Question Message"));
+			ui->icon->setProperty("msgtype", "question");
+			break;
+
+		case MT_QUESTION2:
+			ui->btnYes->setText(tr("Yes"));
+			ui->btnYes->setVisible(true);
+			ui->btnNo->setVisible(true);
+			ui->labTitle->setText(tr("Question Message"));
+			ui->icon->setProperty("msgtype", "question");
+			break;
+
+		case MT_INFO:
+		default:
+			ui->btnYes->setText(tr("Ok"));
+			ui->labTitle->setText(tr("Kindly Reminder"));
+			ui->icon->setProperty("msgtype", "info");
+			break;
+		}
+
+	}
+
+	void MessageBox::initDialog()
+	{
+		Type = MT_INFO;
+		resize(QSize(200, 130));
+		ui->text->setWordWrap(true);
+
+		pFrameHelper = new FrameHelper(this);
+		pFrameHelper->addEdgeWidget(this);
+		pFrameHelper->addDragWidget(this);
+		pFrameHelper->setCloseButton(ui->btnClose);
+	}
+
+	//==================================================================================================
+	void MessageBox::on_btnYes_clicked()
+	{
+		done(RET_YES);
+	}
+
+	void MessageBox::on_btnNo_clicked()
+	{
+		done(RET_NO);
+	}
+
+	void MessageBox::on_btnCancel_clicked()
+	{
+		done(RET_CANCEL);
+	}
 
 
-//==================================================================================================
-UI_NAMESPACE_END
+	//==================================================================================================
+};
+
+//UI_NAMESPACE_END

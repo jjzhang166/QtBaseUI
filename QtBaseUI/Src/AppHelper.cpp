@@ -101,7 +101,7 @@ void regResource(const QString & Name, const QString & Root)
 //==================================================================================================
 void addTranslator(const QString & Name)
 {
-	QTranslator * translator = new QTranslator(0);
+	QPointer<QTranslator> translator = new QTranslator(0);
 	translator->load(QString("lang:") + Name);
 	qApp->installTranslator(translator);
 }
@@ -132,6 +132,50 @@ void setStyleSheet(const QString & Path, bool Append)
 	skinFile.close();
 }
 
+void setTranslator(Language Type)
+{
+	static QPointer<QTranslator> translator = 0;
+
+	if (translator)
+	{
+		qApp->removeTranslator(translator);
+		translator = 0;
+	}
+
+	switch (Type)
+	{
+	case BASEUI::LANG_EN:
+		break;
+	case BASEUI::LANG_CH:
+	{
+		translator = new QTranslator();
+		translator->load(":/ts/qtbaseui_zh.qm");
+		qApp->installTranslator(translator);
+		break;
+	}
+	default:
+		break;
+	}
+}
+
+void changeTranslator(const QString & Path, bool Add)
+{
+	static QMap<QString, QTranslator *> mapTranslator;
+
+	if (Add && !mapTranslator.contains(Path))
+	{
+		QPointer<QTranslator> translator = new QTranslator();
+		translator->load(Path);
+		qApp->installTranslator(translator);
+		mapTranslator.insert(Path, translator);
+	}
+	else if(!Add && mapTranslator.contains(Path))
+	{
+		QPointer<QTranslator> translator = mapTranslator.value(Path);
+		qApp->removeTranslator(translator);
+		mapTranslator.remove(Path);
+	}
+}
 
 //==================================================================================================
 static void initResourceSearch(QSettings & settings)
@@ -199,7 +243,13 @@ void initAppResource()
 
 void initApplication()
 {
+	//加载默认翻译文件
+	setTranslator(LANG_CH);
+
+	//初始化图标库
 	initIconFonts();
+
+	//加载默认皮肤文件
 }
 
 //==================================================================================================

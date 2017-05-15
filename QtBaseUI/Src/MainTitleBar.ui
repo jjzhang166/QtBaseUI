@@ -11,13 +11,22 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainTitleBar</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <property name="spacing">
     <number>0</number>
    </property>
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -26,7 +35,16 @@
       <property name="spacing">
        <number>2</number>
       </property>
-      <property name="margin">
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
        <number>2</number>
       </property>
       <item>
@@ -71,7 +89,7 @@
       <item>
        <widget class="PushButton" name="btnMore">
         <property name="toolTip">
-         <string notr="true">more</string>
+         <string>more</string>
         </property>
         <property name="text">
          <string notr="true"/>
@@ -81,7 +99,7 @@
       <item>
        <widget class="PushButton" name="btnSkin">
         <property name="toolTip">
-         <string notr="true">skin</string>
+         <string>skin</string>
         </property>
         <property name="text">
          <string/>

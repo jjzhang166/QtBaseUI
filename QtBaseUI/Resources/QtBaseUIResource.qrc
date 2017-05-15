@@ -20,5 +20,6 @@
         <file>images/tree/open_blue.png</file>
         <file>images/tree/open_dark.png</file>
         <file>images/tree/open_light.png</file>
+        <file>ts/qtbaseui_zh.qm</file>
     </qresource>
 </RCC>

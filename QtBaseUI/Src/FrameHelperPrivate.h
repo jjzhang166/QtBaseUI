@@ -15,7 +15,8 @@ class QWidget;
 class QMouseEvent;
 class QAbstractButton;
 
-UI_NAMESPACE_BEGIN
+//UI_NAMESPACE_BEGIN
+namespace BASEUI{
 //==================================================================================================
 class FrameHelperPrivate : public QObject, QAbstractNativeEventFilter
 {
@@ -79,6 +80,7 @@ private:
 };
 
 //==================================================================================================
-UI_NAMESPACE_END
+};
+//UI_NAMESPACE_END
 
 #endif // FRAMELESSHELPERPRIVATE_H
