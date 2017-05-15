@@ -177,6 +177,33 @@ void changeTranslator(const QString & Path, bool Add)
 	}
 }
 
+QString getSkinStyles(SkinStyle Style)
+{
+	QString strStyles;
+	QString strSkinPath;
+
+	switch (Style)
+	{
+	case BASEUI::Skin_BLACK:
+		strSkinPath = ":/qss/black.css";
+		break;
+	case BASEUI::Skin_WHITE:
+		break;
+	default:
+		break;
+	}
+
+	if (!strSkinPath.isEmpty())
+	{
+		QFile skinFile(strSkinPath);
+		if (skinFile.open(QFile::ReadOnly | QFile::Unbuffered))
+			strStyles = skinFile.readAll();
+		skinFile.close();
+	}
+
+	return strStyles;
+}
+
 //==================================================================================================
 static void initResourceSearch(QSettings & settings)
 {

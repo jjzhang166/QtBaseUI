@@ -811,10 +811,10 @@ QPButton#pushButton{
     qproperty-iconSize: 25px 25px;
 }
 
-BASEUI--ButtonFontIcon#pushButton{
+TestMainWindow BASEUI--ButtonFontIcon#pushButton{
     qproperty-fontIcon: "iconfontsys" 30px;
-    qproperty-fontIconColor: rgb(210,210,210);
-    qproperty-fontIconSize: 30px 30px;
-    qproperty-fontIconText: "\e790";
+    qproperty-fontIconColor: goldenrod;
+    qproperty-fontIconSize: 16px 16px;
+    qproperty-fontIconText: "\e603";
 }
 
