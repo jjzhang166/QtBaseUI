@@ -27,15 +27,14 @@ void initIconFonts()
 {
 	for (unsigned i = 0; i < sizeof(iconFontArray) / sizeof(stFontMsg); ++i)
 	{
-		//QFile res(iconFontArray[i].fontRes);
-		//if (!res.open(QIODevice::ReadOnly))
-		//	continue;
-		//
-		//QByteArray fontData(res.readAll());
-		//res.close();
+		QFile res(iconFontArray[i].fontRes);
+		if (!res.open(QIODevice::ReadOnly))
+			continue;
+		
+		QByteArray fontData(res.readAll());
+		res.close();
 
-		//QFontDatabase::addApplicationFontFromData(fontData);
-		QFontDatabase::addApplicationFont(iconFontArray[i].fontRes);
+		QFontDatabase::addApplicationFontFromData(fontData);
 	}
 }
 

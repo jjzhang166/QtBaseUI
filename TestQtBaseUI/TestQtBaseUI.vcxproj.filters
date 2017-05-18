@@ -107,9 +107,6 @@
     <CustomBuild Include="TestQtBaseUI.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="TestQtBaseUI.qrc">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="TestDialog.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -130,6 +127,9 @@
     </CustomBuild>
     <CustomBuild Include="MainWindowTitle.ui">
       <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TestQtBaseUI.qrc">
+      <Filter>Source Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
