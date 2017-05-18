@@ -38,6 +38,7 @@ namespace BASEUI {
 
 #else
 		parent->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
+		parent->setAttribute(Qt::WA_TranslucentBackground, true);
 
 		HWND hwnd = (HWND)parent->winId();
 		DWORD style = ::GetWindowLong(hwnd, GWL_STYLE);
@@ -444,9 +445,19 @@ namespace BASEUI {
 
 		case WM_GETMINMAXINFO:
 		{
-			RECT frame = { 0, 0, 0, 0 };
-			AdjustWindowRectEx(&frame, WS_OVERLAPPEDWINDOW, FALSE, 0);
-			parent->setContentsMargins(0, 0, 0, 0);
+			if (::IsZoomed(msg->hwnd)) 
+			{
+				RECT frame = { 0, 0, 0, 0 };
+				AdjustWindowRectEx(&frame, WS_OVERLAPPEDWINDOW, FALSE, 0);
+				frame.left = abs(frame.left);
+				frame.top = abs(frame.bottom);
+				parent->setContentsMargins(frame.left, frame.top, frame.right, frame.bottom);
+			}
+			else 
+			{
+				parent->setContentsMargins(2, 2, 2, 2);
+			}
+			
 			*result = ::DefWindowProc(msg->hwnd, msg->message, msg->wParam, msg->lParam);
 			return true;
 		}

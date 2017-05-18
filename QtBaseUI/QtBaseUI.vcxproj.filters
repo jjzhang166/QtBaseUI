@@ -130,6 +130,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_AppFontIcon.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ToolButton.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ToolButton.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ToolButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Src\FrameHelperPrivate.h">
@@ -203,6 +212,9 @@
     </CustomBuild>
     <CustomBuild Include="qtbaseui_zh.ts">
       <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Include\ToolButton.h">
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

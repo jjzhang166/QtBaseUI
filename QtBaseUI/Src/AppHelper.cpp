@@ -12,6 +12,8 @@
 #include <QApplication>
 #include <QScopedPointer>
 
+#include "QtStaticInclude.h"
+
 UI_NAMESPACE_BEGIN
 //==================================================================================================
 struct QSettingGroup
@@ -114,6 +116,31 @@ void setSkinStyles(const QString & Name)
 	skinFile.close();
 }
 
+void setStyleSheet(const SkinStyle & Style)
+{
+	QString strStyles;
+	QString strSkinPath;
+
+	switch (Style)
+	{
+	case BASEUI::Skin_BLACK:
+		strSkinPath = ":/qss/black.css";
+		break;
+	case BASEUI::Skin_WHITE:
+		break;
+	default:
+		break;
+	}
+
+	if (!strSkinPath.isEmpty())
+	{
+		QFile skinFile(strSkinPath);
+		if (skinFile.open(QFile::ReadOnly | QFile::Unbuffered))
+			qApp->setStyleSheet(skinFile.readAll());
+		skinFile.close();
+	}
+}
+
 void setStyleSheet(const QString & Path, bool Append)
 {
 	QFile skinFile(Path);
@@ -177,7 +204,7 @@ void changeTranslator(const QString & Path, bool Add)
 	}
 }
 
-QString getSkinStyles(SkinStyle Style)
+QString getSkinStyles(const SkinStyle & Style)
 {
 	QString strStyles;
 	QString strSkinPath;
@@ -283,6 +310,18 @@ void initApplication()
 void regWindowTitle(QWidget * widget, QAbstractButton * btnClose, QAbstractButton * btnMin, QAbstractButton * btnMaxRestore, QWidget * title)
 {
 	CHK_EXP_END(widget == NULL);
+
+	while(widget->parent())
+	{
+		if (widget->parent()->inherits("QWidget"))
+		{
+			widget = qobject_cast<QWidget*>(widget->parent());
+		}
+		else
+		{
+			break;
+		}
+	}
 
 	QPointer<FrameHelper> frameHelper = new FrameHelper(widget, title);
 

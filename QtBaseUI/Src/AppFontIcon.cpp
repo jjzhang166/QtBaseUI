@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QFontDatabase>
 
+#include <QtStaticInclude.h>
 
 UI_NAMESPACE_BEGIN
 //----------------------------------------------------------------------------------------------------------------------------
@@ -26,14 +27,15 @@ void initIconFonts()
 {
 	for (unsigned i = 0; i < sizeof(iconFontArray) / sizeof(stFontMsg); ++i)
 	{
-		QFile res(iconFontArray[i].fontRes);
-		if (!res.open(QIODevice::ReadOnly))
-			continue;
+		//QFile res(iconFontArray[i].fontRes);
+		//if (!res.open(QIODevice::ReadOnly))
+		//	continue;
+		//
+		//QByteArray fontData(res.readAll());
+		//res.close();
 
-		QByteArray fontData(res.readAll());
-		res.close();
-
-		QFontDatabase::addApplicationFontFromData(fontData);
+		//QFontDatabase::addApplicationFontFromData(fontData);
+		QFontDatabase::addApplicationFont(iconFontArray[i].fontRes);
 	}
 }
 
