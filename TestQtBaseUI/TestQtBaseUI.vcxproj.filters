@@ -76,6 +76,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_TestQtBaseUI.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MainWindowTitle.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MainWindowTitle.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindowTitle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -90,13 +99,13 @@
     <ClInclude Include="GeneratedFiles\ui_TestMainWindow.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_MainWindowTitle.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="TestQtBaseUI.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="TestQtBaseUI.qrc">
-      <Filter>Resource Files</Filter>
     </CustomBuild>
     <CustomBuild Include="TestDialog.ui">
       <Filter>Form Files</Filter>
@@ -112,6 +121,15 @@
     </CustomBuild>
     <CustomBuild Include="TestQtBaseUI.h">
       <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MainWindowTitle.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MainWindowTitle.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TestQtBaseUI.qrc">
+      <Filter>Source Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

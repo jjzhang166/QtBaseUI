@@ -5,7 +5,6 @@
 #include <QPainter>
 #include <QFontDatabase>
 
-
 UI_NAMESPACE_BEGIN
 //----------------------------------------------------------------------------------------------------------------------------
 struct stFontMsg
@@ -29,7 +28,7 @@ void initIconFonts()
 		QFile res(iconFontArray[i].fontRes);
 		if (!res.open(QIODevice::ReadOnly))
 			continue;
-
+		
 		QByteArray fontData(res.readAll());
 		res.close();
 

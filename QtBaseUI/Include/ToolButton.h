@@ -1,36 +1,33 @@
-Ôªø#pragma once
+#pragma once
+
 #include "AppGlobal.h"
-#include <QPushButton>
+#include <QToolButton>
 
 UI_NAMESPACE_BEGIN
 //==================================================================================================
-class QTBASEUI_EXPORT PushButton : public QPushButton
+class ToolButton : public QToolButton
 {
 	Q_OBJECT
-
 	Q_PROPERTY(QFont fontIcon READ iconFont WRITE setIconFont)
 	Q_PROPERTY(QString fontIconText READ iconFontText WRITE setIconFontText)
 	Q_PROPERTY(QColor fontIconColor READ iconFontColor WRITE setIconFontColor)
 
 public:
-	PushButton(QWidget *parent = 0);
-	~PushButton();
+	ToolButton(QWidget *parent);
+	~ToolButton();
 
 public:
-	void setMenu(QMenu *);
-
-	//‰ΩøÁî®Â≠ó‰ΩìÂ∫ìÊù•ËÆæÁΩÆÊåâÈíÆÂõæÊ†á
+	// π”√◊÷ÃÂø‚¿¥…Ë÷√∞¥≈•Õº±Í
 	QFont iconFont();
 	void setIconFont(const QFont & font);
+
+
 
 	QString iconFontText();
 	void setIconFontText(const QString & text);
 
 	QColor iconFontColor();
 	void setIconFontColor(const QColor & color);
-
-public slots:
-	void recover();
 
 protected:
 	void paintButtonIcon();
@@ -41,9 +38,7 @@ private:
 	QString fontIconText;
 };
 
-
 //==================================================================================================
 UI_NAMESPACE_END
 
 USE_UI_NAMESPACE
-

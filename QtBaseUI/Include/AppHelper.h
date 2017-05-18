@@ -55,6 +55,7 @@ QTBASEUI_EXPORT void regResource(const QString & Path, const QString & Root);
 //加载翻译、设置皮肤[通过外部加载资源]
 QTBASEUI_EXPORT void addTranslator(const QString & Name);
 QTBASEUI_EXPORT void setSkinStyles(const QString & Name);
+QTBASEUI_EXPORT void setStyleSheet(const SkinStyle & Style);
 QTBASEUI_EXPORT void setStyleSheet(const QString & Path, bool Append = false);
 
 //本库中翻译文件的切换, 外部切换翻译文件时需要调用此函数
@@ -66,7 +67,7 @@ QTBASEUI_EXPORT void changeTranslator(const QString & Path, bool Add);
 
 //==================================================================================================
 //基础风格获取（提供几种基本的主题样式）, 方便外部程序切换皮肤时使用
-QTBASEUI_EXPORT QString getSkinStyles(SkinStyle Style);
+QTBASEUI_EXPORT QString getSkinStyles(const SkinStyle & Style);
 
 //==================================================================================================
 //自绘标题栏、注册窗口函数
