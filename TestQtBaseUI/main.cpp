@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
+	Q_INIT_RESOURCE(QtBaseUIResource);
 	initApplication();
-
 	setStyleSheet(":/qss/black.css");
 	//TestQtBaseUI w;
 	//w.show();

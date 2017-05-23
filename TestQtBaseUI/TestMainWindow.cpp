@@ -19,10 +19,10 @@ TestMainWindow::~TestMainWindow()
 
 void TestMainWindow::on_pushButton_clicked()
 {
-	qMsgBoxInfo("123214 d df dfg efgd fgsdf d gd");
-	qMsgBoxError("sdfsd sdf s");
-	qMsgBoxAlert("sdf sdfsdfc");
-	qMsgBoxOk("sedfsdfg s");
-	qMsgBoxQuestion("sdfsadfs");
-	qMsgBoxQuestionTwo("sdfgsdfsfs");
+	qMsgBoxInfo(QStringLiteral("信息提示！"));
+	qMsgBoxError(QStringLiteral("信息提示！"));
+	qMsgBoxAlert(QStringLiteral("信息提示！"));
+	qMsgBoxOk(QStringLiteral("信息提示！"));
+	qMsgBoxQuestion(QStringLiteral("信息提示！"));
+	qMsgBoxQuestionTwo(QStringLiteral("信息提示！"));
 }
