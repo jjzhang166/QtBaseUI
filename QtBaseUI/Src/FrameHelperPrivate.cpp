@@ -425,43 +425,47 @@ namespace BASEUI {
 #if defined Q_OS_WIN
 
 		MSG* msg = (MSG*)message;
-		switch (msg->message)
+		if (msg->hwnd == (HWND)parent->winId())
 		{
-		case WM_NCHITTEST:
-		{
-			int xPos = GET_X_LPARAM(msg->lParam) - parent->frameGeometry().x();
-			int yPos = GET_Y_LPARAM(msg->lParam) - parent->frameGeometry().y();
-
-			if (checkTitleButton(xPos, yPos))
+			//只处理当前窗口消息
+			switch (msg->message)
 			{
-				*result = HTCAPTION;
+			case WM_NCHITTEST:
+			{
+				int xPos = GET_X_LPARAM(msg->lParam) - parent->frameGeometry().x();
+				int yPos = GET_Y_LPARAM(msg->lParam) - parent->frameGeometry().y();
+
+				if (checkTitleButton(xPos, yPos))
+				{
+					*result = HTCAPTION;
+					return true;
+				}
+			}
+			break;
+
+			case WM_NCCALCSIZE:
+				return true;
+
+			case WM_GETMINMAXINFO:
+			{
+				if (::IsZoomed(msg->hwnd)) 
+				{
+					RECT frame = { 0, 0, 0, 0 };
+					AdjustWindowRectEx(&frame, WS_OVERLAPPEDWINDOW, FALSE, 0);
+					frame.left = abs(frame.left);
+					frame.top = abs(frame.bottom);
+					parent->setContentsMargins(frame.left, frame.top, frame.right, frame.bottom);
+				}
+				else 
+				{
+					parent->setContentsMargins(2, 2, 2, 2);
+				}
+			
+				*result = ::DefWindowProc(msg->hwnd, msg->message, msg->wParam, msg->lParam);
 				return true;
 			}
-		}
-		break;
-
-		case WM_NCCALCSIZE:
-			return true;
-
-		case WM_GETMINMAXINFO:
-		{
-			if (::IsZoomed(msg->hwnd)) 
-			{
-				RECT frame = { 0, 0, 0, 0 };
-				AdjustWindowRectEx(&frame, WS_OVERLAPPEDWINDOW, FALSE, 0);
-				frame.left = abs(frame.left);
-				frame.top = abs(frame.bottom);
-				parent->setContentsMargins(frame.left, frame.top, frame.right, frame.bottom);
+			break;
 			}
-			else 
-			{
-				parent->setContentsMargins(2, 2, 2, 2);
-			}
-			
-			*result = ::DefWindowProc(msg->hwnd, msg->message, msg->wParam, msg->lParam);
-			return true;
-		}
-		break;
 		}
 
 #endif
