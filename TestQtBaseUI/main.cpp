@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 
 	initApplication();
-
 	setStyleSheet(":/qss/black.css");
 	//TestQtBaseUI w;
 	//w.show();
@@ -25,6 +24,8 @@ int main(int argc, char *argv[])
 	w->setWindowTitle("1234");
 	w->show();
 
+	QDialog dlg;
+	dlg.exec();
 	//MainWindowTitle wt;
 	//wt.show();
 	return a.exec();
