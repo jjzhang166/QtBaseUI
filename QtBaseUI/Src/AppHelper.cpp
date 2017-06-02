@@ -12,8 +12,6 @@
 #include <QApplication>
 #include <QScopedPointer>
 
-#include "QtStaticInclude.h"
-
 UI_NAMESPACE_BEGIN
 //==================================================================================================
 struct QSettingGroup

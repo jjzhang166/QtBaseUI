@@ -5,8 +5,6 @@
 #include <QPainter>
 #include <QFontDatabase>
 
-#include <QtStaticInclude.h>
-
 UI_NAMESPACE_BEGIN
 //----------------------------------------------------------------------------------------------------------------------------
 struct stFontMsg
