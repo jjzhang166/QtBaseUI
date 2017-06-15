@@ -270,8 +270,17 @@ namespace BASEUI {
 		}
 	}
 
+
 	void FrameHelperPrivate::refreshMaximizedButton()
 	{
+		if (btnMaxRestore.isNull())
+			return;
+
+		if (!btnMaxRestore->isVisible())
+		{
+			return;
+		}
+
 		if (parent->isMaximized())
 		{
 			btnMaxRestore->setObjectName("btnMax");
@@ -371,11 +380,14 @@ namespace BASEUI {
 				QMouseEvent *e = (QMouseEvent *)event;
 				if (e->button() == Qt::LeftButton)
 				{
-					const QPoint & pt = e->pos();
-					if (!title.isNull() && title->rect().contains(pt))
+					if (!btnMaxRestore.isNull())
 					{
-						refreshMaximizedButton();
-						return true;
+						const QPoint & pt = e->pos();
+						if (!title.isNull() && title->rect().contains(pt))
+						{
+							refreshMaximizedButton();
+							return true;
+						}
 					}
 				}
 				break;
@@ -383,6 +395,12 @@ namespace BASEUI {
 
 			if (event->type() == QEvent::WindowStateChange)
 			{
+				if (btnMaxRestore.isNull())
+					return false;
+
+				if (!btnMaxRestore->isVisible())
+					return false;
+
 				QWindowStateChangeEvent * e = (QWindowStateChangeEvent *)event;
 				if (e->oldState() & Qt::WindowMaximized)
 				{
@@ -403,7 +421,8 @@ namespace BASEUI {
 
 		} while (false);
 
-		return QObject::eventFilter(obj, event);
+		return false;
+		//return QObject::eventFilter(obj, event);
 	}
 
 	bool FrameHelperPrivate::checkTitleButton(int x, int y)
@@ -411,7 +430,7 @@ namespace BASEUI {
 		if (title && title->rect().contains(x, y))
 		{
 			QWidget * child = title->childAt(x, y);
-			if (child->inherits("QAbstractButton"))
+			if (child && child->inherits("QAbstractButton"))
 			{
 				return false;
 			}
@@ -432,6 +451,12 @@ namespace BASEUI {
 			{
 			case WM_NCHITTEST:
 			{
+				if (btnMaxRestore.isNull())
+					return false;
+
+				if (!btnMaxRestore->isVisible())
+					return false;
+
 				int xPos = GET_X_LPARAM(msg->lParam) - parent->frameGeometry().x();
 				int yPos = GET_Y_LPARAM(msg->lParam) - parent->frameGeometry().y();
 
