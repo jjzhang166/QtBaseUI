@@ -396,10 +396,10 @@ namespace BASEUI {
 			if (event->type() == QEvent::WindowStateChange)
 			{
 				if (btnMaxRestore.isNull())
-					return false;
+					break;
 
 				if (!btnMaxRestore->isVisible())
-					return false;
+					break;
 
 				QWindowStateChangeEvent * e = (QWindowStateChangeEvent *)event;
 				if (e->oldState() & Qt::WindowMaximized)
@@ -421,8 +421,7 @@ namespace BASEUI {
 
 		} while (false);
 
-		return false;
-		//return QObject::eventFilter(obj, event);
+		return QObject::eventFilter(obj, event);
 	}
 
 	bool FrameHelperPrivate::checkTitleButton(int x, int y)

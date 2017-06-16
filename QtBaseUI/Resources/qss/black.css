@@ -384,6 +384,7 @@ background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 
 QTableView[model="true"]::item{
 padding:0px;
 margin:0px;
+border: none;
 }
 
 QTableView QLineEdit,QTableView QComboBox,QTableView QSpinBox,QTableView QDoubleSpinBox,QTableView QDateEdit,QTableView QTimeEdit,QTableView QDateTimeEdit{
@@ -482,10 +483,12 @@ QTreeView,QListView,QTableView,QSplitter::handle{
 }
 
 QTableView::item,QListView::item,QTreeView::item{
-	padding:1px;
+	padding:0px;
 	margin:0px;
-    background: transparent;
+    border: 0px solid #F5F5F5;
+    background: green;
 }
+
 
 QTableView::item:selected,QListView::item:selected,QTreeView::item:selected{
 	color:#DCDCDC;

@@ -11,6 +11,9 @@ TestMainWindow::TestMainWindow(QWidget *parent)
 	ui.setupUi(this);
 
 	regButtonIcon(ui.pushButton, this);
+
+	pModel = new QRecordModel;
+	ui.treeView->setModel(pModel);
 }
 
 TestMainWindow::~TestMainWindow()
